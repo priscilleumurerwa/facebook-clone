@@ -13,15 +13,16 @@
 <table>
   <thead>
    <h2> Posts from your friends! you can view.</h2>
+   
   </thead>
   <tbody>
   
     <% @posts.each do |post| %>
       
       <tr>
-        <td><h3><%= post.title %></h3><br>
-        <p><%= post.content %></p><br>
-      
+        <td><%= post.title %></h3><br>
+        <p><%= post.content %></p>
+        <%= image_tag post.image.url %>
   
         <%= link_to 'Details', post, class: "btn btn-info" %>
        <% if post.user == current_user %>
@@ -33,7 +34,6 @@
     <% end %>
   </tbody>
 </table>
-
 
 <br>
 

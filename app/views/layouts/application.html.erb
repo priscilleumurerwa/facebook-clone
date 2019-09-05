@@ -77,17 +77,7 @@
 
 </div>
 <div class="list-group">
-          <%= yield   %>
-        
-        
-            <h2> Online Friends</h2>
-            <% User.all.each do |user| %>
-              <tr>
-                <td><h3><%= user.email %></h3><br>
-                </td>
-              </tr>
-            <% end %>
-        
+          <%= yield   %>    
       </div>
       <br><br><br><br><br>
       
