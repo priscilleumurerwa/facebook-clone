@@ -1,10 +1,10 @@
 
  body{
-   background-color:burlywood;
+   background-color:white;
  }
  
  .header{
-   background-color: blueviolet;
+   background-color: blue;
    width: 100%;
  }
  .div1{
@@ -44,7 +44,7 @@
  margin-top: 40rem;
    text-align: center;
    font-size: 25px;
-   background-color: blueviolet !important;
+   background-color: blue !important;
    width:100%;
  
  
