@@ -1,15 +1,11 @@
 <div class="post">
 <% if user_signed_in? %>
-<%= link_to 'Sign Out', destroy_user_session_path, class: "btn btn-danger ", method: :delete %>
 
-<h1 >Lists Posts</h1>
 
-<br><br>
+<h1 >List Posts</h1>
+
+<br>
 <table>
-  <thead>
-   <h2> Posts from your friends! you can view.</h2>
-   
-  </thead>
   <tbody>
   
     <% @posts.each do |post| %>
@@ -36,7 +32,8 @@
 </div>
 <% else %>
 
-<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-info" %>
-
-<%= link_to 'Sign In', new_user_session_path, class: "btn btn-info"  %>
+<h1>welcome to Facebook</h1>
+<h2>Please Login OR Register to Continue</h2>
 <% end %>
+
+<br><br>

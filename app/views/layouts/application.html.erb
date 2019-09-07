@@ -13,7 +13,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
-
+    <body>
     <div class="main">
     <div class="header">
     <header>
@@ -26,69 +26,46 @@
                 </td>
                 <td>
                     <div class="div1">
-                            <button class="bit">search</button>
-                            <button class="btn">profile<%= image_tag"priscille1.jpg" %></button>
-                            <button class="btn">home</button>
-                            <button class="btn">create</button>
-                           
-                            
-                        </nav>
+                            <button class="bit">search</button>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+                            <% if user_signed_in? %>
+                              <%= link_to 'Sign Out', destroy_user_session_path, class: "btn btn-danger ", method: :delete %>
+
+                            <% else %>
+                              <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-info" %>
+                              <%= link_to 'Sign In', new_user_session_path, class: "btn btn-info"  %>
+                              <% end %>
                 </td>
             </tr>
         </table>
-
-
-
 </header>
 </div>
-
-
 <div class="div2">
     <table class="table">
         <tr>
             <td class="size"><%= image_tag"prifil.jpg" %></td>
-        
+           <tr> <td class="size"><%= image_tag"event.jpg" %></td></tr>
+           <tr> <td class="size"><%= image_tag"contacts.png" %></td></tr>
         </tr>
-
         </tr>
         <tr>
             <td class="size"><%= image_tag"msnger.jpg"%></td>
-            
-        </tr>
-        <tr>
-            <td class ="size"><%= image_tag"event.jpg" %></td>
-          
-        </tr>
-        <tr>
-            <td class="size"><%= image_tag "pages.jpg" %></td>
-           
-        </tr>
-        <tr>
-            <td class="size"><%= image_tag"contacts.png"%></td>
-           
-        </tr>
-        </tr>
-        <tr>
-            <td><a href="">see more</a></td>
-        </tr>
+        
     </table>
 
 </div>
 
-</div>
-<div class="list-group">
-          <%= yield   %>    
-      </div>
-      <br><br><br><br><br>
-      
-      <footer class="footer"> 
-      facebook designed by me
-      </footer>
+</div></div>
 
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      
-  </body>
+          <%= yield  %>  
+          <% if user_signed_in? %>
+          
+          <% else %>
+          <nav class="navbar navbar-light bg-primary fixed-bottom">
+          <a class="navbar-brand" href="#">
+            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+          Facebook clone app  
+          </a>
+        </nav>
+        <% end %>
+</body>
 </html>
